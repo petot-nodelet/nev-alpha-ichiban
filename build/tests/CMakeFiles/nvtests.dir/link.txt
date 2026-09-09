@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/nvtests.dir/test_main.cpp.o CMakeFiles/nvtests.dir/core/test_version.cpp.o CMakeFiles/nvtests.dir/core/test_project.cpp.o CMakeFiles/nvtests.dir/core/test_asset.cpp.o CMakeFiles/nvtests.dir/core/test_serialization.cpp.o -o nvtests  ../src/core/libnvcore.a ../src/infrastructure/libnvinfra.a ../src/core/libnvcore.a -lzip 
