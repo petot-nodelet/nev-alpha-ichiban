@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnvinfra.a CMakeFiles/nvinfra.dir/serialization/zip_project_serializer.cpp.o CMakeFiles/nvinfra.dir/serialization/zip_project_deserializer.cpp.o
+/usr/bin/ranlib libnvinfra.a

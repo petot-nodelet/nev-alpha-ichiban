@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnvcore.a CMakeFiles/nvcore.dir/src/version.cpp.o CMakeFiles/nvcore.dir/src/project/project.cpp.o CMakeFiles/nvcore.dir/src/project/project_info.cpp.o CMakeFiles/nvcore.dir/src/project/asset.cpp.o CMakeFiles/nvcore.dir/src/serialization/schema_version.cpp.o
+/usr/bin/ranlib libnvcore.a

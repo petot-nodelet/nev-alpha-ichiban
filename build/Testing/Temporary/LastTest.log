@@ -1,0 +1,26 @@
+Start testing: Sep 09 07:07 WIB
+----------------------------------------------------------
+1/1 Testing: NirvanaEditTests
+1/1 Test: NirvanaEditTests
+Command: "/home/thaekong/MyLab/NEV/NirvanaEdit/build/tests/nvtests"
+Directory: /home/thaekong/MyLab/NEV/NirvanaEdit/build/tests
+"NirvanaEditTests" start time: Sep 09 07:07 WIB
+Output:
+----------------------------------------------------------
+[TEST] Running 5 test(s)...
+  ✓ Version_toString
+  ✓ CurrentVersion_isDefined
+  ✓ Project_creation
+  ✓ Asset_addition
+  ✓ Serialization_stub
+
+[TEST] 5 passed, 0 failed, 5 total
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NirvanaEditTests" end time: Sep 09 07:07 WIB
+"NirvanaEditTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 09 07:07 WIB

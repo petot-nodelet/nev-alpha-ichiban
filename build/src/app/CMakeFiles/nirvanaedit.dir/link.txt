@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/nirvanaedit.dir/main.cpp.o CMakeFiles/nirvanaedit.dir/application.cpp.o -o nirvanaedit  ../core/libnvcore.a ../infrastructure/libnvinfra.a -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 ../core/libnvcore.a -lzip 
