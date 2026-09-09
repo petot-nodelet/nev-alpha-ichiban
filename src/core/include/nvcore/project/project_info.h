@@ -13,14 +13,15 @@ public:
     const std::string& name() const { return name_; }
     void setName(const std::string& name) { name_ = name; touch(); }
     const std::string& createdAt() const { return createdAt_; }
+    void setCreatedAt(const std::string& t) { createdAt_ = t; }
     const std::string& modifiedAt() const { return modifiedAt_; }
+    void setModifiedAt(const std::string& t) { modifiedAt_ = t; }
     void touch() {
         auto now = std::chrono::system_clock::now(); auto t = std::chrono::system_clock::to_time_t(now); std::tm tm_now;
         gmtime_r(&t, &tm_now); std::ostringstream oss; oss << std::put_time(&tm_now, "%Y-%m-%dT%H:%M:%SZ"); modifiedAt_ = oss.str();
     }
     const std::string& version() const { return version_; }
     void setVersion(const std::string& v) { version_ = v; }
-    void setId(const std::string& id) { id_ = id; }
 private:
     std::string id_, name_, createdAt_, modifiedAt_, version_;
 };

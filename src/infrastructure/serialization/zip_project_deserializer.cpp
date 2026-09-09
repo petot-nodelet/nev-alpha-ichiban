@@ -9,7 +9,7 @@ namespace nv::infrastructure {
 using json = nlohmann::json;
 
 // Helper: Parse JSON into Project
-static nv::core::Result<nv::core::Project> jsonToProject(const json& j) {
+static nv::Result<nv::core::Project> jsonToProject(const json& j) {
     nv::core::Project p;
     p.clear(); // Clear the default composition created by the constructor
 

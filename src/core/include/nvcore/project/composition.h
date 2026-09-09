@@ -13,7 +13,6 @@ public:
     void setName(const std::string& name) { name_ = name; }
     Timeline& timeline() { return timeline_; }
     const Timeline& timeline() const { return timeline_; }
-    void setId(uint64_t id) { id_ = id; }
 private:
     uint64_t id_; std::string name_ = "Main Composition"; Timeline timeline_;
 };

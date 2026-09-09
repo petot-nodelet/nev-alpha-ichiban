@@ -22,7 +22,6 @@ public:
     void removeClip(uint64_t clipId) {
         clips_.erase(std::remove_if(clips_.begin(), clips_.end(), [clipId](const std::unique_ptr<Clip>& c) { return c->id() == clipId; }), clips_.end());
     }
-    void setId(uint64_t id) { id_ = id; }
 private:
     uint64_t id_; TrackType type_ = TrackType::Video; std::vector<std::unique_ptr<Clip>> clips_;
 };
