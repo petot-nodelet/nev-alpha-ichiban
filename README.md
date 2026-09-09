@@ -1,4 +1,4 @@
-# NirvanaEdit
+# NirvanaEdit (alpha the insomenya version)
 
 Lightweight native Linux video editor dengan motion graphics, layer workflow,
 keyframe, effects, masks, dan dukungan hardware modest.
