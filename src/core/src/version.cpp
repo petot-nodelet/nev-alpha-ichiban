@@ -1,31 +1,12 @@
 #include "nvcore/version.h"
-#include <sstream>
-
 namespace nv {
-
 std::string Version::toString() const {
-    std::ostringstream oss;
-    oss << major << "." << minor << "." << patch;
+    std::string s = std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
     if (!preRelease.empty()) {
-        oss << "-" << preRelease;
+        s += "-" + preRelease;
     }
-    return oss.str();
+    return s;
 }
-
-int Version::toInt() const {
-    return major * 10000 + minor * 100 + patch;
+const Version& currentVersion() { static const Version v{0, 0, 1, "dev"}; return v; }
+const Version& projectFormatVersion() { static const Version v{1, 0, 0, ""}; return v; }
 }
-
-const Version& currentVersion() {
-    static const Version v{0, 0, 1, "dev"};
-    return v;
-}
-
-const Version& projectFormatVersion() {
-    // Project format has independent versioning.
-    // Bump this when .nvp schema changes.
-    static const Version v{1, 0, 0, ""};
-    return v;
-}
-
-} // namespace nv

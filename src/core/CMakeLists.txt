@@ -26,11 +26,5 @@ set(NVCORE_HEADERS
 )
 
 add_library(nvcore STATIC ${NVCORE_SOURCES} ${NVCORE_HEADERS})
-
-target_include_directories(nvcore
-    PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include>
-)
-
+target_include_directories(nvcore PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
 target_compile_features(nvcore PUBLIC cxx_std_17)
