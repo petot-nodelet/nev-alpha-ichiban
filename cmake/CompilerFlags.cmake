@@ -5,7 +5,6 @@ add_compile_options(
     -Wpedantic
     -Wshadow
     -Wnon-virtual-dtor
-    -Wold-style-cast
     -Wcast-align
     -Woverloaded-virtual
     -Wconversion

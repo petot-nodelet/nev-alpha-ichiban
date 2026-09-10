@@ -1,3 +1,4 @@
+cat > src/infrastructure/CMakeLists.txt << 'EOF'
 # nvinfra - Infrastructure layer (serialization + media)
 # Dependencies: nlohmann_json, libzip, FFmpeg
 
@@ -44,3 +45,4 @@ target_include_directories(nvinfra
         ${SWSCALE_INCLUDE_DIRS}
         ${LIBZIP_INCLUDE_DIRS}
 )
+EOF
