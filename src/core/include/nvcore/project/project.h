@@ -6,10 +6,12 @@
 #include "project_settings.h"
 #include "asset.h"
 #include "composition.h"
+
 namespace nv::core {
 class Project {
 public:
     Project() { addComposition(); }
+    void clear() { assets_.clear(); compositions_.clear(); }
     ProjectInfo& info() { return info_; }
     const ProjectInfo& info() const { return info_; }
     ProjectSettings& settings() { return settings_; }
@@ -30,10 +32,6 @@ public:
     Composition* addComposition() {
         auto comp = std::make_unique<Composition>(); Composition* ptr = comp.get();
         compositions_.push_back(std::move(comp)); info_.touch(); return ptr;
-    }
-    void clear() { 
-        assets_.clear(); 
-        compositions_.clear(); 
     }
 private:
     ProjectInfo info_; ProjectSettings settings_;
