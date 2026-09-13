@@ -1,7 +1,10 @@
 #pragma once
 #include <variant>
 #include <string>
+#include <ostream>
+
 namespace nv {
+
 enum class ErrorCode {
     Ok = 0,
     InvalidArgument,
@@ -14,11 +17,30 @@ enum class ErrorCode {
     UnsupportedOperation,
     InternalError,
 };
+
+// FIX: Tambahkan operator<< agar ErrorCode bisa dicetak oleh test framework
+inline std::ostream& operator<<(std::ostream& os, ErrorCode code) {
+    switch (code) {
+        case ErrorCode::Ok: return os << "Ok";
+        case ErrorCode::InvalidArgument: return os << "InvalidArgument";
+        case ErrorCode::NotFound: return os << "NotFound";
+        case ErrorCode::AlreadyExists: return os << "AlreadyExists";
+        case ErrorCode::IoError: return os << "IoError";
+        case ErrorCode::ParseError: return os << "ParseError";
+        case ErrorCode::SerializationError: return os << "SerializationError";
+        case ErrorCode::MediaError: return os << "MediaError";
+        case ErrorCode::UnsupportedOperation: return os << "UnsupportedOperation";
+        case ErrorCode::InternalError: return os << "InternalError";
+        default: return os << "UnknownErrorCode(" << static_cast<int>(code) << ")";
+    }
+}
+
 struct Error {
     ErrorCode code;
     std::string message;
     Error(ErrorCode c, std::string m) : code(c), message(std::move(m)) {}
 };
+
 template <typename T>
 class Result {
 public:
@@ -32,6 +54,7 @@ public:
 private:
     std::variant<T, Error> storage_;
 };
+
 template <>
 class Result<void> {
 public:
@@ -45,4 +68,5 @@ private:
     bool ok_ = false;
     Error err_{ErrorCode::InternalError, "uninitialized"};
 };
-}
+
+} // namespace nv

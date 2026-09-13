@@ -1,48 +1,27 @@
-cat > src/infrastructure/CMakeLists.txt << 'EOF'
-# nvinfra - Infrastructure layer (serialization + media)
-# Dependencies: nlohmann_json, libzip, FFmpeg
-
-set(NVINFRA_SOURCES
-    serialization/zip_project_serializer.cpp
-    serialization/zip_project_deserializer.cpp
-    media/media_probe.cpp
-    media/thumbnail_generator.cpp
-    media/media_validator.cpp
-    media/media_importer.cpp
+cat > tests/CMakeLists.txt << 'EOF'
+set(NVTEST_SOURCES
+    test_main.cpp
+    core/test_version.cpp
+    core/test_project.cpp
+    core/test_asset.cpp
+    core/test_serialization.cpp
+    infrastructure/media/test_media_validator.cpp
+    infrastructure/media/test_media_probe.cpp
 )
 
-set(NVINFRA_HEADERS
-    serialization/zip_project_serializer.h
-    serialization/zip_project_deserializer.h
-    media/media_probe.h
-    media/thumbnail_generator.h
-    media/media_validator.h
-    media/media_importer.h
-)
+add_executable(nvtests ${NVTEST_SOURCES})
 
-add_library(nvinfra STATIC ${NVINFRA_SOURCES} ${NVINFRA_HEADERS})
-
-target_link_libraries(nvinfra
-    PUBLIC
+target_link_libraries(nvtests
+    PRIVATE
         nvcore
-        nlohmann_json::nlohmann_json
-    PRIVATE
-        ${AVFORMAT_LIBRARIES}
-        ${AVCODEC_LIBRARIES}
-        ${AVUTIL_LIBRARIES}
-        ${SWSCALE_LIBRARIES}
-        ${LIBZIP_LIBRARIES}
+        nvinfra
 )
 
-# FIX: Ekspos direktori ini secara PUBLIC agar nvtests bisa menemukan header serialization/
-target_include_directories(nvinfra
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}
+target_include_directories(nvtests
     PRIVATE
-        ${AVFORMAT_INCLUDE_DIRS}
-        ${AVCODEC_INCLUDE_DIRS}
-        ${AVUTIL_INCLUDE_DIRS}
-        ${SWSCALE_INCLUDE_DIRS}
-        ${LIBZIP_INCLUDE_DIRS}
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/src/infrastructure
 )
+
+add_test(NAME NirvanaEditTests COMMAND nvtests)
 EOF

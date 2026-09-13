@@ -1,5 +1,4 @@
-# nvinfra - Infrastructure layer (serialization + media)
-# Dependencies: nlohmann_json, libzip, FFmpeg
+# Infrastructure layer - handles external dependencies
 
 set(NVINFRA_SOURCES
     serialization/zip_project_serializer.cpp
@@ -33,7 +32,6 @@ target_link_libraries(nvinfra
         ${LIBZIP_LIBRARIES}
 )
 
-# FIX: Ekspos direktori ini secara PUBLIC agar nvtests bisa menemukan header serialization/
 target_include_directories(nvinfra
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}

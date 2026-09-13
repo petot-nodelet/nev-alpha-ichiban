@@ -1,18 +1,11 @@
-# nvmedia - Media Subsystem (Phase 2)
-# Dependencies: FFmpeg (libavformat, libavcodec, libavutil, libswscale)
-
 set(NVMEDIA_SOURCES
-    media_probe.cpp
-    thumbnail_generator.cpp
     media_validator.cpp
-    media_importer.cpp
+    media_probe.cpp
 )
 
 set(NVMEDIA_HEADERS
-    media_probe.h
-    thumbnail_generator.h
     media_validator.h
-    media_importer.h
+    media_probe.h
 )
 
 add_library(nvmedia STATIC ${NVMEDIA_SOURCES} ${NVMEDIA_HEADERS})
