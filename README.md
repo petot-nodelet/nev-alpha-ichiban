@@ -21,10 +21,10 @@ NirvanaEdit adalah editor video native Linux yang terinspirasi dari **Alight Mot
 
 | Phase | Nama | Status |
 |-------|------|--------|
-| **Phase 0** | Foundation & Build System | ✅ Complete |
+| **Phase 0** | Foundation & Build System | ✅ **Complete** |
 | **Phase 1** | Core Domain & Serialization (.nvp) | ✅ **Complete** |
-| **Phase 2** | Media Subsystem (Import, Probe, Thumbnails) |  In Progress |
-| **Phase 3** | Timeline UI & Canvas | ⏳ Planned |
+| **Phase 2** | Media Subsystem (Import, Probe, Thumbnails) |  ✅ **Complete** |
+| **Phase 3** | Timeline UI & Canvas | ✅ **Complete** |
 | **Phase 4** | Playback & Preview (GStreamer/OpenGL) | ⏳ Planned |
 | **Phase 5–12** | Effects, Keyframes, Export, Packaging | ⏳ Planned |
 
