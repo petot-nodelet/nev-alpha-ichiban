@@ -1,11 +1,15 @@
 set(NVMEDIA_SOURCES
-    media_validator.cpp
     media_probe.cpp
+    media_validator.cpp
+    media_importer.cpp
+    thumbnail_generator.cpp
 )
 
 set(NVMEDIA_HEADERS
-    media_validator.h
     media_probe.h
+    media_validator.h
+    media_importer.h
+    thumbnail_generator.h
 )
 
 add_library(nvmedia STATIC ${NVMEDIA_SOURCES} ${NVMEDIA_HEADERS})

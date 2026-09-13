@@ -2,10 +2,13 @@ set(NVTEST_SOURCES
     test_main.cpp
     core/test_version.cpp
     core/test_project.cpp
+    core/test_timeline.cpp
     core/test_asset.cpp
     core/test_serialization.cpp
     infrastructure/media/test_media_validator.cpp
     infrastructure/media/test_media_probe.cpp
+    infrastructure/media/test_thumbnail_generator.cpp
+    infrastructure/media/test_media_importer.cpp
 )
 
 add_executable(nvtests ${NVTEST_SOURCES})

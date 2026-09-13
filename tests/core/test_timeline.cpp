@@ -1,4 +1,3 @@
-cat > tests/core/test_timeline.cpp << 'EOF'
 #include "framework/test_framework.h"
 #include "nvcore/project/project.h"
 
@@ -103,4 +102,3 @@ NV_TEST_CASE(Track_TrimClip) {
     auto resInvalid = track->trimClipStart(clip->id(), 6000);
     NV_ASSERT(resInvalid.isErr());
 }
-EOF
